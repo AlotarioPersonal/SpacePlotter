@@ -1,9 +1,18 @@
+"""
+Space Point Plotter
+Logan Kaminski
+
+A software used for plotting points in a 2-dimensional "space." Mostly a way for
+me to get out of my rusty python stage.
+"""
+
 import turtle
 import os
 import keyboard as k
 import math
 import time as t
 
+#variable pool
 win = turtle.Screen()
 win2 = 0
 win.setup(width=645, height=529)
@@ -62,10 +71,11 @@ man.shape(player)
 readoutdisplay.shape(readout)
 movingState.shape(indicatoroff)
 offscreenState.shape(indicatoroff)
-#to the professionals reading this about to make a git commit--
+#to the professionals reading this about to make a pull request--
 #i understand this is bad practice, but it's 4am on a school night
 #and frankly my patience is thinner than graphene right now
 
+#handle the background loop sequence that happens when you click on the ship to plot your point
 def backgroundLoop():
     var2 = tim2
     for i in range(tim2):
@@ -86,6 +96,7 @@ def backgroundLoop():
         print("It will take " + str(tim) + " minutes to get here.")
         print("Time Passed: " + str(i) + " minutes")
 
+#handles the travel sequence
 def travelSequence():
     win.bye()
     global win2
@@ -94,7 +105,7 @@ def travelSequence():
     t.sleep(1)
     print("ekfugusgf")
     
-
+#handles what happens when you click on the actual ship before the travel sequence
 def handlePlotting(x, y):
     global manx
     global many
@@ -114,6 +125,7 @@ def handlePlotting(x, y):
     running = False
     travelSequence()
     
+#responsible for handling the printing on screen with all the turtles    
 def movementHandling():
     shipx = manpos.xcor()
     shipy = manpos.ycor()
@@ -141,7 +153,7 @@ def movementHandling():
         offscreenState.shape(indicatoroff)
 
 while running == True:
-    
+    #key/click checks
     if k.is_pressed("d"):
         man.left(7)
         manpos.left(7)
