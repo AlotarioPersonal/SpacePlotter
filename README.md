@@ -1,4 +1,11 @@
 # SpacePlotter
 
-a small python program meant because I'm bored and need something to program to keep myself from being rusty.
-nothing too interesting, still a W.I.P
+a short python program about plotting points in space.
+
+![image](https://github.com/AlotarioPersonal/SpacePlotter/assets/126506217/f1ff7364-81d8-4e48-bd61-f14837016a66)
+
+Controls:
+
+Use WAD to move. (No S, can't move backwards so just turn around)
+Click on the ship to plot your point and begin travelling.
+Program ends when you reach your destination.
